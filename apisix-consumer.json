@@ -1,0 +1,8 @@
+{
+    "username": "llamaup",
+    "plugins": {
+        "key-auth": {
+            "key": "__APISIX_LLAMACPP_APIKEY_VAR__"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+apisix:
+  node_listen:
+    - ip: 127.0.0.1
+      port: 8082
+  ssl:
+    enable: true
+    listen:
+      - port: 443
+deployment:
+  role: traditional
+  role_traditional:
+    config_provider: etcd
+    etcd:
+      host:
+      - http://localhost:2379
+
+  admin:
+    admin_key:
+      - name: admin
+        key: __APISIX_ADMIN_KEY_VAR__
+        role: admin

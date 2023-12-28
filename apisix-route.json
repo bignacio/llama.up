@@ -1,0 +1,21 @@
+{
+    "uri": "/*",
+    "timeout": {
+        "connect": 600,
+        "send": 600,
+        "read": 600
+    },
+    "plugins": {
+        "key-auth": {
+            "header": "Authorization",
+            "quiery": "Authorization",
+            "hide_credentials": true
+        }
+    },
+    "upstream": {
+        "type": "roundrobin",
+        "nodes": {
+            "localhost:8080": 1
+        }
+    }
+}
