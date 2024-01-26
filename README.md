@@ -15,6 +15,13 @@ Features:
 
 llama.up uses [Apache APISIX](https://apisix.apache.org) as API gateway.
 
+
+## Contributing and issues
+
+llama.up was created for personal use so if you have suggestions to make it better or run into problems, please create an issue or open a PR in the repo.
+
+And remember, be nice. Thanks!.
+
 ## Pre-requisites
 
 * An AWS account and credentials (key ID and secret access key)
