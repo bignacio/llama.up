@@ -70,6 +70,6 @@ resource "null_resource" "wait_for_instance" {
   }
 
   provisioner "local-exec" {
-    command = "until curl -ks --resolve llamaup.org:443:${aws_instance.llamaup.public_ip} https://llamaup.org/health -H 'Authorization: ${var.apisix_llamacpp_key}' | grep -q '\"status\":'; do sleep 30; done"
+    command = "until curl -ks --resolve llamaup.org:443:${aws_instance.llamaup.public_ip} https://llamaup.org/health -H 'Authorization: ${var.apisix_llamacpp_key}' | grep -q '\"status\":'; do sleep 60; done"
   }
 }

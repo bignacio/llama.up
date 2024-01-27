@@ -26,6 +26,12 @@ build_openblas() {
     cmake --build build --config Release -- -j8
 }
 
+
+# stop the service if running
+if systemctl list-units --type=service --all | grep -q "llamacpp"; then
+    systemctl stop "llamacpp"
+fi
+
 cd /opt/llamaup/app
 
 if [ -d "llama.cpp" ]; then
@@ -37,6 +43,7 @@ else
     git config --global --add safe.directory /opt/llamaup/app/llama.cpp
     cd llama.cpp
 fi
+
 
 rm -rf build
 
