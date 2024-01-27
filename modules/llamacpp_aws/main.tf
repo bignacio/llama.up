@@ -12,6 +12,7 @@ resource "aws_instance" "llamaup" {
             #!/bin/bash
             apt install git -y
             cd /
+            rm -rf llama.up
             git clone https://github.com/bignacio/llama.up
             sed -i 's/__APISIX_ADMIN_KEY_VAR__/${var.apisix_admin_key}/g' /llama.up/apisix-conf.yaml
             sed -i 's/__APISIX_ADMIN_KEY_VAR__/${var.apisix_admin_key}/g' /llama.up/configure-apisix.sh
